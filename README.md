@@ -1,18 +1,21 @@
 # python-celery-demo
 
-# pip install -U "celery[redis]"
-# pip install flower eventlet
+# Requirements
+pip install -U "celery[redis]"
+pip install flower eventlet
 
-# celery -A tasks worker --loglevel=INFO --concurrency=1 -n worker1 --queues=queue1
-# celery -A tasks worker --loglevel=INFO --concurrency=1 -n worker2 --queues=queue2
-# flower -A tasks
+# Run Project
+cd project_folder
+python program.py
 
-# run through eventlet
-# celery -A tasks worker -l INFO --concurrency=500 --pool=eventlet -n worker1 --queues=queue1
-# celery -A tasks worker -l INFO --concurrency=500 --pool=eventlet -n worker2 --queues=queue2
-
-# cd celery_proj
-# python program.py
+> run celery
+celery -A tasks worker --loglevel=INFO --concurrency=1 -n worker1 --queues=queue1
+celery -A tasks worker --loglevel=INFO --concurrency=1 -n worker2 --queues=queue2
+flower -A tasks
+OR
+> run celery through eventlet
+celery -A tasks worker -l INFO --concurrency=500 --pool=eventlet -n worker1 --queues=queue1
+celery -A tasks worker -l INFO --concurrency=500 --pool=eventlet -n worker2 --queues=queue2
 
 # NOTES:
 """
